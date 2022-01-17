@@ -1,0 +1,23 @@
+The ``0-add_integer` module
+=========================
+Using ``add_integer``
+-------------------------
+``add_integer`` from the ``0-add_integer`` module:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(7, 11)
+18
+>>> add_integer(-3, 4)
+1
+>>> add_integer(7.0, 11.0)
+18
+>>> add_integer(7.4, 11.8)
+18
+>>> add_integer('a', 5)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(12, 'Holberton')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer

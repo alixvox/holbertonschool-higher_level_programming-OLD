@@ -1,0 +1,27 @@
+The ``2-matrix_divided` module
+=========================
+Using ``matrix_divided``
+-------------------------
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[3, 6, 9], [4.5, 3, 2]]
+>>> matrix_divided(matrix, 3)
+[[1.0, 2.0, 3.0], [1.5, 1.0, 0.67]]
+
+>>> matrix = [[2, 4], [1, 3, 5]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix = [['a', 5, 7], [3, 4, 'crab']]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [[3, 6, 7, 8], [4, 1, 6, 3]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero

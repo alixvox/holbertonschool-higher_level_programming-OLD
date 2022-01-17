@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """This module contains one function, add_integer
 """
+
+
 def add_integer(a, b=98):
     """
     Returns the sum of a and b, two integers.

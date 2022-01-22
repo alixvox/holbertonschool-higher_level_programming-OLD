@@ -26,14 +26,14 @@ Testing BaseGeometry.integer_validator()
     >>> my_geom.integer_validator("osoumen", 0)
     Traceback (most recent call last):
     ...
-    ValueEror: name must be greater than 0
+    ValueError: osoumen must be greater than 0
 
     >>> my_geom.integer_validator("m_036", -22)
     Traceback (most recent call last):
     ...
-    ValueEror: name must be greater than 0
+    ValueError: m_036 must be greater than 0
 
     >>> my_geom.integer_validator("acid greg")
     Traceback (most recent call last):
     ...
-    integer_validator() missing 1 required positional argument: 'value'
+    TypeError: integer_validator() missing 1 required positional argument: 'value'

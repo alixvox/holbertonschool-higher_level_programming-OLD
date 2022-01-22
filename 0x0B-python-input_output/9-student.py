@@ -4,9 +4,9 @@ This module contains class Student.
 """
 
 
-class Student():
+class Student:
     """
-    Student has str  first_name and last_name, and int age.
+    Student has str first_name and last_name, and int age.
     """
 
     def __init__(self, first_name, last_name, age):

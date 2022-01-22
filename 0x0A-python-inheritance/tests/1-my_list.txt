@@ -29,7 +29,7 @@ Testing MyClass.print_sorted()
     [-9, 1, 3, 3, 21, 69]
 
     >>> my_list.append("stinkbug")
-    >>> my-list.print_sorted()
+    >>> my_list.print_sorted()
     Traceback (most recent call last):
     ...
     TypeError: '<' not supported between instances of 'str' and 'int'

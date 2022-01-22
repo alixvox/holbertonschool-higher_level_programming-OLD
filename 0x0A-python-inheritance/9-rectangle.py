@@ -17,11 +17,11 @@ class Rectangle(BaseGeometry):
         """
 
         self.integer_validator("width", width)
-        self.__width == width
+        self.__width = width
         self.integer_validator("height", height)
-        self.__height == height
+        self.__height = height
 
-    def area():
+    def area(self):
         """
         area() calculates the area of Rectangle.
         """

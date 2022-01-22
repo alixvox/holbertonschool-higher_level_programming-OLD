@@ -2,7 +2,6 @@
 """
 This module contains class Square.
 """
-
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -18,12 +17,6 @@ class Square(Rectangle):
             self.__width = size
             self.__height = size
             self.__size = size
-
-    def __str__(self):
-        """This method prints with size:
-        python3 -c 'print(__import__("my_module").
-        MyClass.my_function.__doc__)'"""
-        return ("[Rectangle] {}/{}".format(self.__width, self.__height))
 
     def area(self):
         """This method returns area with size:

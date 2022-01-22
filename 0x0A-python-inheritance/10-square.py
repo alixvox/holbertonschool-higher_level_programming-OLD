@@ -13,10 +13,10 @@ class Square(Rectangle):
         """This method instantiates with size:
         python3 -c 'print(__import__("my_module").
         MyClass.my_function.__doc__)'"""
-        if self.integer_validator("size", size):
-            self.__width = size
-            self.__height = size
-            self.__size = size
+        self.integer_validator("size", size)
+        self.__width = size
+        self.__height = size
+        self.__size = size
 
     def area(self):
         """This method returns area with size:

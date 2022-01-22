@@ -13,7 +13,13 @@ def pascal_triangle(n):
     my_list = []
     if n <= 0:
         return my_list
+    prev_list = [1]
     for i in range(n):
-        num_list = [int(x) for x in str(11**i)]
-        my_list.append(num_list)
+        my_list.append(prev_list)
+        curr_list = []
+        curr_list.append(prev_list[0])
+        for i in range(len(prev_list) - 1):
+            curr_list.append(prev_list[i] + prev_list[i + 1])
+        curr_list.append(prev_list[-1])
+        prev_list = curr_list
     return my_list

@@ -32,7 +32,8 @@ class Student():
 
     def reload_from_json(self, json):
         """
-        reload_from_json(self, json) uses dict json to replace self's attributes.
+        reload_from_json(self, json) uses dict json
+        to replace self's attributes.
         """
 
         self.first_name = json["first_name"]

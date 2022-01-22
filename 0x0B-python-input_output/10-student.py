@@ -23,9 +23,10 @@ class Student:
         to_json(self) returns the dictionary representation of self.
         """
 
-        self_dict = self.__dict__.copy()
-        if attrs and all(isinstance(item, str) for item in attrs):
-            for i in self.__dict__.keys():
-                if i not in attrs:
-                    self_dict.pop(i)
-        return self_dict
+        self_dict = {}
+        if type(attrs) is list and all(isinstance(item, str) for item in attrs):
+            for i in attrs:
+                if hasattr(self, i):
+                    self_dict.update({i: getattr(self, i)})
+            return self_dict
+        return self.__dict__

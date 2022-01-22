@@ -24,7 +24,7 @@ class Student:
         """
 
         self_dict = {}
-        if type(attrs) is list and all(isinstance(item, str) for item in attrs):
+        if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
             for i in attrs:
                 if hasattr(self, i):
                     self_dict.update({i: getattr(self, i)})

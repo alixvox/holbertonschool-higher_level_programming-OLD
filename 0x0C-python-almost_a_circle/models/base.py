@@ -3,7 +3,7 @@
 This module contains class Base.
 """
 import json
-from os.path import exists
+import os
 
 
 class Base:
@@ -76,11 +76,10 @@ class Base:
         load_from_file loads a list of objects from a json file.
         """
         filename = cls.__name__ + ".json"
-        list_dicts = []
-        if not exists(filename):
-            return dict_objs
+        if not os.path.exists(filename):
+            return list_dicts
         with open(filename, 'r') as file:
-            list_dicts = json.load(file)
+            list_dicts = cls.from_json_string(file.read())
         list_objs = []
         for dict in list_dicts:
             list_objs.append(cls.create(**dict))

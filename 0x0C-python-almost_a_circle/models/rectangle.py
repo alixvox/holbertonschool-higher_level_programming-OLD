@@ -15,22 +15,79 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Initiaizations of private ints width, height, x, y,
+        Initializations of private ints width, height, x, y,
         and optional id.
         """
 
-        print("{}: x".format(x))
         self.attribute_checker("width", width)
-        self.attribute_checker("height", height)
-        self.attribute_checker("x", x)
-        self.attribute_checker("y", y)
         self.__width = width
+        self.attribute_checker("height", height)
         self.__height = height
+        self.attribute_checker("x", x)
         self.__x = x
-        print("{}: __x".format(self.__x))
+        self.attribute_checker("y", y)
         self.__y = y
-        if id is not None:
-            super().__init__(id)
+        super().__init__(id)
+
+    @property
+    def width(self):
+        """
+        returns self's width.
+        """
+        return self.__width
+
+    @property
+    def height(self):
+        """
+        returns self's height.
+        """
+        return self.__height
+
+    @property
+    def x(self):
+        """
+        returns self's x.
+        """
+        return self.__x
+
+    @property
+    def y(self):
+        """
+        returns self's y.
+        """
+        return self.__y
+
+    @x.setter
+    def x(self, value):
+        """
+        assigns int value to self's x.
+        """
+        self.attribute_checker("x", value)
+        self.__x = value
+
+    @width.setter
+    def width(self, value):
+        """
+        assigns int value to self's width.
+        """
+        self.attribute_checker("width", value)
+        self.__width = value
+
+    @height.setter
+    def height(self, value):
+        """
+        assigns int value to self's height.
+        """
+        self.attribute_checker("height", value)
+        self.__height = value
+
+    @y.setter
+    def y(self, value):
+        """
+        assigns int value to self's y.
+        """
+        self.attribute_checker("y", value)
+        self.__y = value
 
     def attribute_checker(self, attr, value):
         """
@@ -47,63 +104,50 @@ class Rectangle(Base):
             elif value < 0:
                 raise ValueError("{} must be >= 0".format(attr))
 
+    def area(self):
+        """
+        returns self's area (width * height).
+        """
+        return self.__width * self.__height
 
-    @property
-    def width(self):
+    def display(self):
         """
-        returns self's width.
+        prints self using '#', using x and y.
         """
-        return self.__width
+        for i in range(self.__y):
+            print()
+        for i in range(self.__height):
+            for j in range(self.__x):
+                print(' ', end='')
+            for j in range(self.__width):
+                print('#', end='')
+            print()
 
-    @width.setter
-    def width(self, value):
+    def __str__(self):
         """
-        assigns int value to self's width.
+        returns a string representation of self in the format:
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>.
         """
-        self.attribute_checker("width", value)
-        self.__width = value
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}\
+        ".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    @property
-    def height(self):
+    def update(self, *args, **kwargs):
         """
-        returns self's height.
+        Updates self's attributes with a list of arguments *args,
         """
-        return self.__height
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        i = 0
+        if args:
+            for arg in args:
+                setattr(self, attrs[i], arg)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
-    @height.setter
-    def height(self, value):
+    def to_dictionary(self):
         """
-        assigns int value to self's height.
+        Returns a dictionary of the attributes of Rectangle
         """
-        self.attribute_checker("height", height)
-        self.__height = value
-
-    @property
-    def x(self):
-        """
-        returns self's x.
-        """
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        """
-        assigns int value to self's x.
-        """
-        self.attribute_checker("x", x)
-        self.__x = value
-
-    @property
-    def y(self):
-        """
-        returns self's y.
-        """
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        """
-        assigns int value to self's y.
-        """
-        self.attribute_checker("y", y)
-        self.__y = value
+        return {"id": self.id, "width": self.width, "height\
+        ": self.height, "x": self.x, "y": self.y}

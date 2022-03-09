@@ -3,7 +3,6 @@
 the header of the response sent from a URL. """
 
 
-
 if __name__ == '__main__':
     import urllib.request
     import urllib.parse

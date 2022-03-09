@@ -2,7 +2,6 @@
 """ This module fetches the status of a URL. """
 
 
-
 if __name__ == '__main__':
     from requests import get
 

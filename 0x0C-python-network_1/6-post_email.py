@@ -3,7 +3,6 @@
 the response. """
 
 
-
 if __name__ == '__main__':
     from requests import post
     from sys import argv

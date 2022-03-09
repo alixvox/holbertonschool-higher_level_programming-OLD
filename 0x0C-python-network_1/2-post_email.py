@@ -3,7 +3,6 @@
 sent to a URL. """
 
 
-
 if __name__ == '__main__':
     from urllib.request import Request, urlopen
     from urllib.parse import urlencode

@@ -2,7 +2,6 @@
 """ This module displays the response from sending to a URL. """
 
 
-
 if __name__ == '__main__':
     from urllib.request import Request, urlopen
     from urllib.error import HTTPError

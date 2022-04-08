@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const fileserver = require("fs");
-fileserver.writefile(
+fileserver.writeFile(
   process.argv[2],
   process.argv[3],
   "utf-8",

@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require("request");
-reuest(process.argv[2], function (error, response, body) {
+request(process.argv[2], function (error, response, body) {
   if (error) {
     console.error(error);
   } else {

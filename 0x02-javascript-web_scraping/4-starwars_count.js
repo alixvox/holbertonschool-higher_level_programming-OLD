@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const request = require("request");
+const request = require('request');
 request(process.argv[2], function (error, response, body) {
   if (error) {
     console.error(error);
@@ -9,7 +9,7 @@ request(process.argv[2], function (error, response, body) {
     for (const movies in jsonResponse) {
       const chars = jsonResponse[movies].characters;
       for (const wedges in chars) {
-        if (chars[wedges].includes("/18/")) {
+        if (chars[wedges].includes('/18/')) {
           count += 1;
         }
       }
